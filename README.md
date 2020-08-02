@@ -13,4 +13,4 @@ A web application designed to make notes.
 Designed for anyone looking to make notes.
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/64335245/89132754-0a5d4600-d4dc-11ea-8678-9fc6d2e837da.png)
+![image](https://user-images.githubusercontent.com/64335245/89132768-2cef5f00-d4dc-11ea-9748-6e760c09d4e2.png)

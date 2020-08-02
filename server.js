@@ -5,9 +5,9 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const { notes } = require('./db/db.json');
 
-// parse incoming string or array data
+console.log(notes);
+
 app.use(express.urlencoded({ extended: true}));
-// parse incoming JSON data
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -22,6 +22,14 @@ app.get('/notes', (req, res) => {
 app.get('/api/notes', (req, res) => {
     //res.sendFile(path.join(__dirname, './db/db.json'));
     res.json(notes);
+});
+
+app.post('/api/notes', (req, res) => {
+    req.body.id = notes.length.toString();
+    note = req.body;
+    notes.push(note);
+    fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify([{note}], null, 2));
+    res.json(req.body);
 });
 
 app.listen(PORT, () => {
